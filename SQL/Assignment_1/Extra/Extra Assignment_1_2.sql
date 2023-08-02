@@ -20,16 +20,16 @@ ADD `VTI_Account` INT UNSIGNED NOT NULL;
 
 -- Exercie 2:
 CREATE TABLE `Data_Types` (
-    ID 				INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-    `Name` 			VARCHAR(50) NOT NULL,
-    `Code` 			CHAR(5) NOT NULL,
-    Modified_Date 	TIMESTAMP
+    ID INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    `Name` VARCHAR(50) NOT NULL,
+    `Code` CHAR(5) NOT NULL,
+    Modified_Date TIMESTAMP
 );
 -- Exercie 3:
 CREATE TABLE `Data_Types_2` (
-	ID 				INT AUTO_INCREMENT PRIMARY KEY,			
-    `Name` 			VARCHAR(50),						
-    BirthDate 		DATE,					
-    Gender 			BIT,						
-    IsDeletedFlag 	BOOL				
+	ID INT AUTO_INCREMENT PRIMARY KEY,			
+    `Name` VARCHAR(50),						
+    BirthDate DATE,					
+    Gender BIT,						
+    IsDeletedFlag BOOL				
 );
