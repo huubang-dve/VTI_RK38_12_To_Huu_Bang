@@ -27,7 +27,7 @@ CREATE TABLE `Data_Types` (
 );
 -- Exercie 3:
 CREATE TABLE `Data_Types_2` (
-	ID INT AUTO_INCREMENT PRIMARY KEY,			
+	`ID` INT AUTO_INCREMENT PRIMARY KEY,			
     `Name` VARCHAR(50),						
     BirthDate DATE,					
     Gender BIT,						
