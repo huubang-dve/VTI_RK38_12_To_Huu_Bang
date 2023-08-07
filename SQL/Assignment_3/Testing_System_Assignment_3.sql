@@ -1,7 +1,7 @@
 -- CREATE DATABASE
-DROP DATABASE IF EXISTS `Testing_System_Assignment_2`;
-CREATE DATABASE `Testing_System_Assignment_2`;
-USE `Testing_System_Assignment_2`;
+DROP DATABASE IF EXISTS `Testing_System_Assignment_3`;
+CREATE DATABASE `Testing_System_Assignment_3`;
+USE `Testing_System_Assignment_3`;
 
 -- CREATE TABLE: DEPARTMENT
 DROP TABLE IF EXISTS `Department`;
