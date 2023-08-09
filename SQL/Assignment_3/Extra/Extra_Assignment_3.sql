@@ -34,7 +34,7 @@ CREATE TABLE `Data_Types_2` (
 -- Q1: INSERT INTO TABLE: TRAINEE
 INSERT INTO `Trainee` (Full_Name, Birth_Date, Gender, ET_IQ, ET_Gmath, ET_English, Training_Class, Evaluation_Nodes, VTI_Account) VALUES
     ('John Doe', '1995-02-15', 'male', 15, 12, 40, 'Class A', 'Good performance overall', 123456),
-    ('Jane Smith', '1998-06-22', 'female', 18, 14, 45, 'Class B', 'Excellence in mathematics', 234567),
+    ('Jane Smith', '1998-02-22', 'female', 18, 14, 45, 'Class B', 'Excellence in mathematics', 234567),
     ('Michael Johnson', '1997-11-10', 'male', 17, 13, 48, 'Class A', 'Strong communication skills', 345678),
     ('Emily Brown', '1996-09-03', 'female', 19, 15, 50, 'Class C', 'Improvement needed in English', 456789),
     ('William Davis', '1999-03-28', 'male', 16, 11, 38, 'Class B', 'Works well in team projects', 567890),
@@ -73,27 +73,23 @@ VALUES
     ('Sophia Wilson', '1994-04-12', 0, 0);
 
 --  Q2: Viết lệnh để lấy ra tất cả các thực tập sinh đã vượt qua bài test đầu vào, nhóm chúng thành các tháng sinh khác nhau:
-SELECT 
-    Full_Name,
-    COUNT(*) AS PassedTrainees,
-    MONTH(Birth_Date) AS MonthOfBirth
+SELECT
+	GROUP_CONCAT(Full_Name),
+    MONTH(Birth_Date) AS MonthOfBirth,
+    COUNT(*) AS PassedTrainees
 FROM
-    Trainee
+    `Trainee`
 WHERE
-    ET_IQ > 10 AND ET_Gmath > 10
-        AND ET_English > 30
-GROUP BY MonthOfBirth;
+    ET_IQ > 10 AND
+    ET_Gmath > 10 AND
+    ET_English > 30
+GROUP BY
+    MonthOfBirth;
 
 -- Q3: Viết lệnh để lấy ra thực tập sinh có tên dài nhất, lấy ra các thông tin sau: tên, tuổi, các thông tin cơ bản (như đã được định nghĩa trong table):
-SELECT 
-    *
-FROM
-    Trainee
-WHERE
-    LENGTH(Full_Name) = (SELECT 
-            MAX(LENGTH(Full_Name))
-        FROM
-            Trainee);
+SELECT *
+FROM  `Trainee`
+WHERE LENGTH(Full_Name) = (SELECT MAX(LENGTH(Full_Name))  FROM Trainee);
 
 -- Q4: Viết lệnh để lấy ra tất cả các thực tập sinh là ET, 1 ET thực tập sinh là những người đã vượt qua bài test đầu vào và thỏa mãn số điểm như sau: 
 -- ET_IQ + ET_Gmath>=20 

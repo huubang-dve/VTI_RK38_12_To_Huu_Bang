@@ -8,8 +8,8 @@ INSERT INTO Position (PositionName)
 VALUES ('Dev'), ('Scrum Master'), ('PM'), ('Dev'), ('Scrum Master'), ('PM'), ('Dev'), ('Scrum Master'), ('PM'), ('Dev');
 
 -- INSERT INTO Account
-INSERT INTO Account (Email, Username, FullName, DepartmentID, PositionID)
-VALUES ('user1@example.com', 'user1', 'User One', 1, 1),
+INSERT INTO `Account` (Email, Username, FullName, DepartmentID, PositionID)
+VALUES ('user1@example.com', 'user1', 'User Do', 1, 1),
        ('user2@example.com', 'user2', 'User Two', 2, 2),
        ('user3@example.com', 'user3', 'User Three', 3, 3),
        ('user4@example.com', 'user4', 'User Four', 4, 4),

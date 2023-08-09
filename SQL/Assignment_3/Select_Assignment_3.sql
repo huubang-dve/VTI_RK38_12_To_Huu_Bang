@@ -10,14 +10,14 @@ WHERE DepartmentName = 'Sale';
 -- Question 4: Lấy ra thông tin account có full name dài nhất
 SELECT *
 FROM `Account`
-ORDER BY Fullname 
-DESC LIMIT 1;
+WHERE LENGTH(FullName) = (SELECT MAX(LENGTH(FullName)) FROM Account);
+
 
 -- Question 5: Lấy ra thông tin account có full name dài nhất và thuộc phòng ban có id = 3:
-SELECT * FROM `Account`
-WHERE DepartmentID = 3
-ORDER BY LENGTH(FullName) 
-DESC LIMIT 1;
+SELECT *
+FROM Account
+WHERE LENGTH(FullName) = (SELECT MAX(LENGTH(FullName)) FROM Account) AND DepartmentID = 3;
+
 
 -- Question 6: Lấy ra tên group đã tham gia trước ngày 20/12/2019:
 SELECT GroupName
@@ -52,7 +52,7 @@ WHERE DepartmentID = 2;
 -- Question 11: Lấy ra nhân viên có tên bắt đầu bằng chữ "D" và kết thúc bằng chữ "o":
 SELECT * 
 FROM `Account`
-WHERE FullName LIKE 'D%o';
+WHERE SUBSTRING_INDEX(FullName,' ', -1) LIKE 'D%o';
 
 -- Question 12: Xóa tất cả các exam được tạo trước ngày 20/12/2019:
 DELETE FROM `Exam`
@@ -64,7 +64,7 @@ WHERE Content LIKE 'câu hỏi%';
 
 -- Question 14: Update thông tin của account có id = 5 thành tên "Nguyễn Bá Lộc" và
 -- email thành loc.nguyenba@vti.com.vn:
-UPDATE Account
+UPDATE `Account`
 SET FullName = 'Nguyễn Bá Lộc', Email = 'loc.nguyenba@vti.com.vn'
 WHERE AccountID = 5;
 
