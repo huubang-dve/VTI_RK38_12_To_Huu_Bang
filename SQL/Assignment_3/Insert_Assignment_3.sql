@@ -1,6 +1,6 @@
 -- INSERT INTO Department
 INSERT INTO Department (DepartmentName)
-VALUES ('Sales'), ('Marketing'), ('Development'), ('HR'), ('Finance'),
+VALUES ('Sale'), ('Marketing'), ('Development'), ('HR'), ('Finance'),
        ('IT'), ('Operations'), ('Customer Support'), ('Design'), ('Quality Assurance');
 
 -- INSERT INTO Position
